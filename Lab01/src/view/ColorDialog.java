@@ -33,7 +33,7 @@ import model.Pixel;
  * <p>Title: ColorDialog</p>
  * <p>Description: ... (JDialog)</p>
  * <p>Copyright: Copyright (c) 2003 Mohammed Elghaouat, Eric Paquette</p>
- * <p>Company: (ÉTS) - École de Technologie Supérieure</p>
+ * <p>Company: (ï¿½TS) - ï¿½cole de Technologie Supï¿½rieure</p>
  * @author unascribed
  * @version $Revision: 1.7 $
  */
@@ -119,6 +119,25 @@ public class ColorDialog extends JDialog {
 	private JPanel createCMYKPanel(ColorDialogResult result, int imageWidths) {	
 		JPanel panel = new JPanel();
 		
+	//	cmykMediator = new CMYKColorMediator(result, imageWidths, 30);
+		
+		
+		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+		/*
+		ColorSlider csCyan = new ColorSlider("C:", 1-result.getPixel().getRed(), cmykMediator.getRedImage());
+		ColorSlider csMagenta = new ColorSlider("M:", 1-result.getPixel().getGreen(), cmykMediator.getGreenImage());
+		ColorSlider csYellow = new ColorSlider("Y:", 1-result.getPixel().getBlue(), cmykMediator.getBlueImage());
+		//ColorSlider csKey = new ColorSlider("K:", result.getPixel().getBlue(), cmykMediator.getBlueImage());
+		
+		cmykMediator.setCyanCS(csCyan);
+		cmykMediator.setMagentaCS(csMagenta);
+		cmykMediator.setYellowCS(csYellow);
+		
+		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+		panel.add(csRed);
+		panel.add(csGreen);
+		panel.add(csBlue);
+		*/
 		return panel;
 	}
 	
