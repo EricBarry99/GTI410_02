@@ -32,10 +32,10 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 	ColorSlider yellowCS;
 	ColorSlider keyCS;
 	
-	double cyan;
-	double magenta;
-	double yellow;
-	double key;
+	float cyan;
+	float magenta;
+	float yellow;
+	float key;
 	
 	BufferedImage cyanImage;
 	BufferedImage magentaImage;
@@ -47,11 +47,10 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 	ColorDialogResult result;
 	
 	CMYKColorMediator(ColorDialogResult result, int imagesWidth, int imagesHeight) {
-		System.out.println("result" + result);
 		this.imagesWidth = imagesWidth;
 		this.imagesHeight = imagesHeight;
 		
-		double[] cmykColors = rgbTocmyk(result.getPixel().getRed(), result.getPixel().getGreen(), result.getPixel().getBlue());
+		float[] cmykColors = rgbTocmyk(result.getPixel().getRed(), result.getPixel().getGreen(), result.getPixel().getBlue());
 		
 		this.cyan = cmykColors[0];
 		this.magenta = cmykColors[1];
@@ -68,39 +67,63 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 		computeCyanImage(cyan, magenta, yellow, key);
 		computeMagentaImage(cyan, magenta, yellow, key);
 		computeYellowImage(cyan, magenta, yellow, key); 	
+		computeKeyImage(cyan, magenta, yellow, key); 	
 	}
 	
-	
+
 	/*
-	 * @see View.SliderObserver#update(double)
+	 * @see View.SliderObserver#update(float)
 	 */
 	public void update(ColorSlider s, int v) {
+		
+		float val = (float) v/255;
 		boolean updateCyan = false;
 		boolean updateMagenta = false;
 		boolean updateYellow = false;
-		if (s == cyanCS && v != cyan) {
-			cyan = v;
+		boolean updateKey = false;
+		
+		if (s == cyanCS && val != cyan) {
+			cyan = val;
+			updateMagenta = true;
+			updateYellow = true;
+			updateKey = true;
+		}
+		
+		if (s == magentaCS && val != magenta) {
+			magenta = val;
+			updateCyan = true;
+			updateYellow = true;
+			updateKey = true;
+		}
+		
+		if (s == yellowCS && val != yellow) {
+			yellow = val;
+			updateCyan = true;
+			updateMagenta = true;
+			updateKey = true;
+		}
+		
+		if (s == keyCS && val != key) {
+			key = val;
+			updateCyan = true;
 			updateMagenta = true;
 			updateYellow = true;
 		}
-		if (s == magentaCS && v != magenta) {
-			magenta = v;
-			updateCyan = true;
-			updateYellow = true;
-		}
-		if (s == yellowCS && v != yellow) {
-			yellow = v;
-			updateCyan = true;
-			updateMagenta = true;
-		}
+		
 		if (updateCyan) {
 			computeCyanImage(cyan, magenta, yellow, key);
 		}
+		
 		if (updateMagenta) {
 			computeMagentaImage(cyan, magenta, yellow, key);
 		}
+		
 		if (updateYellow) {
 			computeYellowImage(cyan, magenta, yellow, key);
+		}
+		
+		if (updateKey) {
+			computeKeyImage(cyan, magenta, yellow, key);
 		}
 		
 		int[] rgbColors = cmykTorgb(cyan, magenta, yellow, key);		
@@ -109,13 +132,12 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 	}
 	
 	
-	public void computeCyanImage(double cyan, double magenta, double yellow, double key) { 
-		// passer cmyk et convertir pour utiliser rgb
+	public void computeCyanImage(float cyan, float magenta, float yellow, float key) { 
 		int[] rgbColors = cmykTorgb(cyan, magenta, yellow, key);		
 		Pixel p = new Pixel(rgbColors[0], rgbColors[1], rgbColors[2], 255); 
 		
 		for (int i = 0; i<imagesWidth; ++i) {
-			p.setRed((int)(((double)i / (double)imagesWidth)*255.0)); 
+			p.setRed((int)(((float)i / (float)imagesWidth)*255.0)); 
 			int rgb = p.getARGB();
 			for (int j = 0; j<imagesHeight; ++j) {
 				cyanImage.setRGB(i, j, rgb);
@@ -126,13 +148,12 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 		}
 	}
 	
-	public void computeMagentaImage(double cyan, double magenta, double yellow, double key) { 
-		// passer cmyk et convertir pour utiliser rgb
+	public void computeMagentaImage(float cyan, float magenta, float yellow, float key) { 
 		int[] rgbColors = cmykTorgb(cyan, magenta, yellow, key);		
 		Pixel p = new Pixel(rgbColors[0], rgbColors[1], rgbColors[2], 255); 
 		
 		for (int i = 0; i<imagesWidth; ++i) {
-			p.setGreen((int)(((double)i / (double)imagesWidth)*255.0)); 
+			p.setGreen((int)(((float)i / (float)imagesWidth)*255.0)); 
 			int rgb = p.getARGB();
 			for (int j = 0; j<imagesHeight; ++j) {
 				magentaImage.setRGB(i, j, rgb);
@@ -143,13 +164,12 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 		}
 	}
 	
-	public void computeYellowImage(double cyan, double magenta, double yellow, double key) { 
-		// passer cmyk et convertir pour utiliser rgb
+	public void computeYellowImage(float cyan, float magenta, float yellow, float key) { 
 		int[] rgbColors = cmykTorgb(cyan, magenta, yellow, key);		
 		Pixel p = new Pixel(rgbColors[0], rgbColors[1], rgbColors[2], 255); 
 		
 		for (int i = 0; i<imagesWidth; ++i) {
-			p.setBlue((int)(((double)i / (double)imagesWidth)*255.0)); 
+			p.setBlue((int)(((float)i / (float)imagesWidth)*255.0)); 
 			int rgb = p.getARGB();
 			for (int j = 0; j<imagesHeight; ++j) {
 				yellowImage.setRGB(i, j, rgb);
@@ -159,6 +179,38 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 			yellowCS.update(yellowImage);
 		}
 	}
+	 
+	public void computeKeyImage(float cyan, float magenta, float yellow, float key) { 
+		
+		int[] rgbColors = cmykTorgb(cyan, magenta, yellow, key);		
+		int black = (int) 1-Math.max(rgbColors[0], Math.max(rgbColors[1], rgbColors[2]));		
+
+		Pixel p = new Pixel(black,black,black,255); 
+		
+		for (int i = 0; i<imagesWidth; ++i) {
+			p.setRed((int)(((float)i / (float)imagesWidth)*255.0)); 
+			p.setGreen((int)(((float)i / (float)imagesWidth)*255.0)); 
+			p.setBlue((int)(((float)i / (float)imagesWidth)*255.0)); 
+
+			int rgb = p.getARGB();
+			
+		/*
+		 * 	reverse
+			for (int j = imagesHeight-1; j>=0; j--) {
+				keyImage.setRGB(imagesWidth-i-1, j, rgb);
+			}	
+			*/
+			
+			for (int j = 0; j<imagesHeight; ++j) {
+				keyImage.setRGB(i, j, rgb);
+			}
+			
+		}
+		if (keyCS != null) {
+			keyCS.update(keyImage);
+		}
+	}
+	
 	
 	/**
 	 * @return
@@ -182,6 +234,13 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 	}
 
 	/**
+	 * @return
+	 */
+	public BufferedImage getKeyImage() {
+		return keyImage;
+	}
+	
+	/**
 	 * @param slider
 	 */
 	public void setCyanCS(ColorSlider slider) {
@@ -204,28 +263,41 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 		yellowCS = slider;
 		slider.addObserver(this);
 	}
+
+	/**
+	 * @param slider
+	 */
+	public void setKeyCS(ColorSlider slider) {
+		keyCS = slider;
+		slider.addObserver(this);
+	}
+	
 	/**
 	 * @return
 	 */
-	public double getYellow() {
+	public float getYellow() {
 		return yellow;
 	}
 
 	/**
 	 * @return
 	 */
-	public double getMagenta() {
+	public float getMagenta() {
 		return magenta;
 	}
 
 	/**
 	 * @return
 	 */
-	public double getCyan() {
+	public float getCyan() {
 		return cyan;
 	}
 
+	public float getKey() {
+		return key;
+	}
 
+	
 	/* (non-Javadoc)
 	 * @see model.ObserverIF#update()
 	 */
@@ -241,14 +313,20 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 		cyan = result.getPixel().getRed();
 		magenta = result.getPixel().getGreen();
 		yellow = result.getPixel().getBlue();
+		// on choisis le noir selon la plus grande valeur d'entre les couleurs RGB affichees
+		key = (int) Math.max(result.getPixel().getRed(), Math.max(result.getPixel().getGreen(), result.getPixel().getBlue()));
 		
 		cyanCS.setValue(rgbColors[0]);
 		magentaCS.setValue(rgbColors[1]);
 		yellowCS.setValue(rgbColors[2]);
+		keyCS.setValue(Math.min(rgbColors[0], Math.min(rgbColors[1], rgbColors[2])));
+	//	keyCS.setValue(250);
+		
 		computeCyanImage(cyan, magenta, yellow, key);
 		computeMagentaImage(cyan, magenta, yellow, key);
 		computeYellowImage(cyan, magenta, yellow, key);
-		
+		computeKeyImage(cyan, magenta, yellow, key);
+
 		// Efficiency issue: When the color is adjusted on a tab in the 
 		// user interface, the sliders color of the other tabs are recomputed,
 		// even though they are invisible. For an increased efficiency, the 
@@ -259,51 +337,30 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 	}
 	
 	/*
-	The R,G,B values are divided by 255 to change the range from 0..255 to 0..1:
-		R' = R/255
-		G' = G/255
-		B' = B/255
-		The black key (K) color is calculated from the red (R'), green (G') and blue (B') colors:
-		K = 1-max(R', G', B')
-		The cyan color (C) is calculated from the red (R') and black (K) colors:
-		C = (1-R'-K) / (1-K)
-		The magenta color (M) is calculated from the green (G') and black (K) colors:
-		M = (1-G'-K) / (1-K)
-		The yellow color (Y) is calculated from the blue (B') and black (K) colors:
-		Y = (1-B'-K) / (1-K)
-	*/	
-	
-	//https://stackoverflow.com/questions/4982210/find-the-max-of-3-numbers-in-java-with-different-data-types
-	public double[] rgbTocmyk(int r, int g,int b) {
-		double R = r/255;
-		double G = g/255;
-		double B = b/255;
-
-		double K = 1-Math.max(R, Math.max(G, B));		
-		double C = (1-R-K) / (1-K);
-		double M = (1-G-K) / (1-K);
-		double Y = (1-B-K) / (1-K);
-						
-		return (new double[] {C,M,Y,K});
+	 * inspired from
+	 * http://www.rapidtables.com/convert/color/rgb-to-cmyk.htm
+	 * https://stackoverflow.com/questions/4982210/find-the-max-of-3-numbers-in-java-with-different-data-types
+	 */
+	public float[] rgbTocmyk(int r, int g,int b) {
+		float R = (float) r/255; // check for correct division
+		float G = (float) g/255;
+		float B = (float) b/255;
+		
+		float K = 1-Math.max(R, Math.max(G, B));		
+		float C = (1-R-K) / (1-K);
+		float M = (1-G-K) / (1-K);
+		float Y = (1-B-K) / (1-K);
+		return (new float[] {C,M,Y,K});
 	}
 	
 	/*
-	  	The R,G,B values are given in the range of 0..255.
-		The red (R) color is calculated from the cyan (C) and black (K) colors:
-		R = 255 × (1-C) × (1-K)
-		The green color (G) is calculated from the magenta (M) and black (K) colors:
-		G = 255 × (1-M) × (1-K)
-		The blue color (B) is calculated from the yellow (Y) and black (K) colors:
-		B = 255 × (1-Y) × (1-K)
+	 * inspired from
+	 * http://www.rapidtables.com/convert/color/cmyk-to-rgb.htm
 	 */
-	
-	public int[] cmykTorgb(double c, double m, double y, double k) {
-
+	public int[] cmykTorgb(float c, float m, float y, float k) {
 		int R = (int) Math.ceil(255*(1-c)*(1-k));
 		int G = (int) Math.ceil(255*(1-m)*(1-k));
 		int B = (int) Math.ceil(255*(1-y)*(1-k));
-		
 		return new int[] {R,G,B};
 	}
 }
-

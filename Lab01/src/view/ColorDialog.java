@@ -37,6 +37,7 @@ import model.Pixel;
  * @author unascribed
  * @version $Revision: 1.7 $
  */
+
 public class ColorDialog extends JDialog {
 	private JButton okButton;
 	private RGBColorMediator rgbMediator;
@@ -123,24 +124,21 @@ public class ColorDialog extends JDialog {
 		JPanel cmykPanel = new JPanel();
 		cmykPanel.setLayout(new BoxLayout(cmykPanel, BoxLayout.Y_AXIS));
 		
-		System.out.println("red: " + result.getPixel().getRed());
-		System.out.println("Green: " + result.getPixel().getGreen());
-		System.out.println("Blue: " + result.getPixel().getBlue());
 		ColorSlider csCyan = new ColorSlider("C:", 255-result.getPixel().getRed(), cmykMediator.getCyanImage());
 		ColorSlider csMagenta = new ColorSlider("M:", 255-result.getPixel().getGreen(), cmykMediator.getMagentaImage());
 		ColorSlider csYellow = new ColorSlider("Y:", 255-result.getPixel().getBlue(), cmykMediator.getYellowImage());
-	//	ColorSlider csKey = new ColorSlider("K:", result.getPixel().getBlue(), cmykMediator.getBlueImage());
+		ColorSlider csKey = new ColorSlider("K:", (int) Math.max(result.getPixel().getRed(), Math.max(result.getPixel().getGreen(), result.getPixel().getBlue())), cmykMediator.getKeyImage());
 		
 		cmykMediator.setCyanCS(csCyan);
 		cmykMediator.setMagentaCS(csMagenta);
 		cmykMediator.setYellowCS(csYellow);
-	//	rgbMediator.setKeyCS(csKey);
+		cmykMediator.setKeyCS(csKey);
 		
 		cmykPanel.setLayout(new BoxLayout(cmykPanel, BoxLayout.Y_AXIS));
 		cmykPanel.add(csCyan);
 		cmykPanel.add(csMagenta);
 		cmykPanel.add(csYellow);
-	//	panel.add(csKey);
+		cmykPanel.add(csKey);
 		
 		return cmykPanel;
 	}
