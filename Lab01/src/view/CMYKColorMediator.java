@@ -76,7 +76,7 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 	 */
 	public void update(ColorSlider s, int v) {
 		
-		float val = (float) v/255;
+		float val =  v/(float)255;
 		boolean updateCyan = false;
 		boolean updateMagenta = false;
 		boolean updateYellow = false;
@@ -188,16 +188,13 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 	 
 	public void computeKeyImage(float cyan, float magenta, float yellow, float key) { 
 		
-		int[] rgbColors = cmykTorgb(cyan, magenta, yellow, key);		
-		int black = (int) 1-Math.max(rgbColors[0], Math.max(rgbColors[1], rgbColors[2]));		
+		int[] rgbColors;
 
-		Pixel p = new Pixel(black,black,black,255); 
+		Pixel p;
 		
 		for (int i = 0; i<imagesWidth; ++i) {
-			p.setRed((int)(((float)i / (float)imagesWidth)*255.0)); 
-			p.setGreen((int)(((float)i / (float)imagesWidth)*255.0)); 
-			p.setBlue((int)(((float)i / (float)imagesWidth)*255.0)); 
-
+			rgbColors =  cmykTorgb(cyan, magenta, yellow, i/(float)imagesWidth);
+			p = new Pixel(rgbColors[0],rgbColors[1],rgbColors[2],255);
 			int rgb = p.getARGB();
 			
 		/*
@@ -312,20 +309,20 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 		// is aready properly set, there is no need to recompute the images.
 		
 		int[] rgbColors = cmykTorgb(cyan, magenta, yellow, key);		
-		Pixel currentColor = new Pixel(rgbColors[0], rgbColors[1], rgbColors[2], 255); 
-		
+		Pixel currentColor = new Pixel(rgbColors[0], rgbColors[1], rgbColors[2], 255);
 		if(currentColor.getARGB() == result.getPixel().getARGB()) return;
 		
-		cyan = result.getPixel().getRed();
-		magenta = result.getPixel().getGreen();
-		yellow = result.getPixel().getBlue();
-		// on choisis le noir selon la plus grande valeur d'entre les couleurs RGB affichees
-		key = (int) Math.max(result.getPixel().getRed(), Math.max(result.getPixel().getGreen(), result.getPixel().getBlue()));
-		
-		cyanCS.setValue(rgbColors[0]);
-		magentaCS.setValue(rgbColors[1]);
-		yellowCS.setValue(rgbColors[2]);
-		keyCS.setValue(Math.min(rgbColors[0], Math.min(rgbColors[1], rgbColors[2])));
+		float [] CMYK = rgbTocmyk(result.getPixel().getRed(),result.getPixel().getGreen(),result.getPixel().getBlue());
+
+		cyan = CMYK[0];
+		magenta = CMYK[1];
+		yellow = CMYK[2];
+		key = CMYK[3];
+
+		cyanCS.setValue((int)CMYK[0]*255);
+		magentaCS.setValue((int)CMYK[1]*255);
+		yellowCS.setValue((int)CMYK[2]*255);
+		keyCS.setValue((int)CMYK[3]*255);
 	//	keyCS.setValue(250);
 		
 		computeCyanImage(cyan, magenta, yellow, key);

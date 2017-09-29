@@ -69,6 +69,8 @@ class YCbCrColorMediator extends Object implements SliderObserver, ObserverIF {
             computeCrImage(y,cb,cr);
         }
         arrayRGB = YCbCrToRgb(y,cb,cr);
+        System.out.println("Y: " + y + " Cb: " + cb + "Cr: " + cr);
+        System.out.println("R: " + arrayRGB[0] + " G: " + arrayRGB[1] + " B: " + arrayRGB[2]);
         Pixel pixel = new Pixel(arrayRGB[0], arrayRGB[1], arrayRGB[2], 255);
         result.setPixel(pixel);
 
@@ -127,17 +129,17 @@ class YCbCrColorMediator extends Object implements SliderObserver, ObserverIF {
 
     private double[] RgbToYCbCR (double red, double green, double blue){
         double [] YCbCr = new double[3];
-        YCbCr[0] = 0.299 * red +0.587 * green + 0.114 * blue;
-        YCbCr[1] = 128 - 0.169 * red - 0.331 * green + 0.5 * blue;
-        YCbCr[2] = 128 + 0.5 * red - 0.419 * green - 0.081 * blue;
+        YCbCr[0] = (0.257 * red) + (0.504 * green) + (0.098 * blue) + 16;
+        YCbCr[1] = (-0.148 * red) - (0.291 * green) + (0.439 * blue) + 128;
+        YCbCr[2] = (0.439 * red) - (0.368 * green) - (0.071 * blue) + 128;
         return YCbCr;
     }
 
     private int[] YCbCrToRgb (double y, double Cb, double Cr){
         int [] RGB = new int[3];
-        RGB[0] = (int)(1 * y  + 1.4 * (cr - 128));
-        RGB[1] = (int)(1 * y  - 0.343 * (cb - 128) - 0.711 * (cr -128));
-        RGB[2] = (int)(1 * y  + 1.765 * (cb - 128));
+        RGB[0] = (int)((double)1.164 * (double)(y-16)  + (double)1.596 * (cr - (double)128));
+        RGB[1] = (int)((double)1.164 * (double)(y-16)  - (double)0.813 * (cr - (double)128) - (double)0.391 * (cb -(double)128));
+        RGB[2] = (int)((double)1.164 * (double)(y-16)  + (double)2.018 * (cb - (double)128));
         return RGB;
     }
 
@@ -221,13 +223,16 @@ class YCbCrColorMediator extends Object implements SliderObserver, ObserverIF {
         cr = arrayYCbCr[2];
 
         yCS.setValue((int)y);
-        cbCS.setValue((int)(cb));
-        crCS.setValue((int)(cr));
+        cbCS.setValue((int)cb);
+        crCS.setValue((int)cr);
 
         computeYImage(y,cb,cr);
         computeCbImage(y,cb,cr);
         computeCrImage(y,cb,cr);
 
+
+        System.out.println("Y: " + y + " Cb: " + cb + "Cr: " + cr);
+        System.out.println("R: " + arrayRGB[0] + " G: " + arrayRGB[1] + " B: " + arrayRGB[2]);
         // Efficiency issue: When the color is adjusted on a tab in the
         // user interface, the sliders color of the other tabs are recomputed,
         // even though they are invisible. For an increased efficiency, the
