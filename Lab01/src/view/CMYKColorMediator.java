@@ -14,7 +14,7 @@
 */
 
 /*
- * source consultée
+ * source consultï¿½e
  * http://www.rapidtables.com/convert/color/cmyk-to-rgb.htm
  * 
  * 
@@ -133,11 +133,13 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 	
 	
 	public void computeCyanImage(float cyan, float magenta, float yellow, float key) { 
-		int[] rgbColors = cmykTorgb(cyan, magenta, yellow, key);		
-		Pixel p = new Pixel(rgbColors[0], rgbColors[1], rgbColors[2], 255); 
-		
-		for (int i = 0; i<imagesWidth; ++i) {
-			p.setRed((int)(((float)i / (float)imagesWidth)*255.0)); 
+		int[] rgbColors;
+		Pixel p;
+
+			for (int i = 0; i<imagesWidth; ++i) {
+			rgbColors = cmykTorgb((float)(i/(float)imagesWidth), magenta, yellow, key);
+			p = new Pixel(rgbColors[0], rgbColors[1], rgbColors[2], 255);
+			//p.setRed((int)(((float)i / (float)imagesWidth)*255.0));
 			int rgb = p.getARGB();
 			for (int j = 0; j<imagesHeight; ++j) {
 				cyanImage.setRGB(i, j, rgb);
@@ -149,11 +151,13 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 	}
 	
 	public void computeMagentaImage(float cyan, float magenta, float yellow, float key) { 
-		int[] rgbColors = cmykTorgb(cyan, magenta, yellow, key);		
-		Pixel p = new Pixel(rgbColors[0], rgbColors[1], rgbColors[2], 255); 
+		int[] rgbColors;
+		Pixel p ;
 		
 		for (int i = 0; i<imagesWidth; ++i) {
-			p.setGreen((int)(((float)i / (float)imagesWidth)*255.0)); 
+			//p.setGreen((int)(((float)i / (float)imagesWidth)*255.0));
+			rgbColors = cmykTorgb(cyan, (float)(i/(float)imagesWidth), yellow, key);
+			p = new Pixel(rgbColors[0], rgbColors[1], rgbColors[2], 255);
 			int rgb = p.getARGB();
 			for (int j = 0; j<imagesHeight; ++j) {
 				magentaImage.setRGB(i, j, rgb);
@@ -165,11 +169,13 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 	}
 	
 	public void computeYellowImage(float cyan, float magenta, float yellow, float key) { 
-		int[] rgbColors = cmykTorgb(cyan, magenta, yellow, key);		
-		Pixel p = new Pixel(rgbColors[0], rgbColors[1], rgbColors[2], 255); 
+		int[] rgbColors ;
+		Pixel p ;
 		
 		for (int i = 0; i<imagesWidth; ++i) {
-			p.setBlue((int)(((float)i / (float)imagesWidth)*255.0)); 
+			//p.setBlue((int)(((float)i / (float)imagesWidth)*255.0));
+			rgbColors = cmykTorgb(cyan, magenta, (float)(i/(float)imagesWidth), key);
+			p =new Pixel(rgbColors[0], rgbColors[1], rgbColors[2], 255);
 			int rgb = p.getARGB();
 			for (int j = 0; j<imagesHeight; ++j) {
 				yellowImage.setRGB(i, j, rgb);
