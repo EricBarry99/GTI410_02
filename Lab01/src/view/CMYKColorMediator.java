@@ -13,16 +13,9 @@
    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-/*
- * source consult�e
- * http://www.rapidtables.com/convert/color/cmyk-to-rgb.htm
- * 
- * 
- */
 package view;
 
 import java.awt.image.BufferedImage;
-
 import model.ObserverIF;
 import model.Pixel;
 
@@ -139,7 +132,6 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 			for (int i = 0; i<imagesWidth; ++i) {
 			rgbColors = cmykTorgb((float)(i/(float)imagesWidth), magenta, yellow, key);
 			p = new Pixel(rgbColors[0], rgbColors[1], rgbColors[2], 255);
-			//p.setRed((int)(((float)i / (float)imagesWidth)*255.0));
 			int rgb = p.getARGB();
 			for (int j = 0; j<imagesHeight; ++j) {
 				cyanImage.setRGB(i, j, rgb);
@@ -155,7 +147,6 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 		Pixel p ;
 		
 		for (int i = 0; i<imagesWidth; ++i) {
-			//p.setGreen((int)(((float)i / (float)imagesWidth)*255.0));
 			rgbColors = cmykTorgb(cyan, (float)(i/(float)imagesWidth), yellow, key);
 			p = new Pixel(rgbColors[0], rgbColors[1], rgbColors[2], 255);
 			int rgb = p.getARGB();
@@ -173,7 +164,6 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 		Pixel p ;
 		
 		for (int i = 0; i<imagesWidth; ++i) {
-			//p.setBlue((int)(((float)i / (float)imagesWidth)*255.0));
 			rgbColors = cmykTorgb(cyan, magenta, (float)(i/(float)imagesWidth), key);
 			p =new Pixel(rgbColors[0], rgbColors[1], rgbColors[2], 255);
 			int rgb = p.getARGB();
@@ -187,9 +177,7 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 	}
 	 
 	public void computeKeyImage(float cyan, float magenta, float yellow, float key) { 
-		
 		int[] rgbColors;
-
 		Pixel p;
 		
 		for (int i = 0; i<imagesWidth; ++i) {
@@ -197,17 +185,9 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 			p = new Pixel(rgbColors[0],rgbColors[1],rgbColors[2],255);
 			int rgb = p.getARGB();
 			
-		/*
-		 * 	reverse
-			for (int j = imagesHeight-1; j>=0; j--) {
-				keyImage.setRGB(imagesWidth-i-1, j, rgb);
-			}	
-			*/
-			
 			for (int j = 0; j<imagesHeight; ++j) {
 				keyImage.setRGB(i, j, rgb);
 			}
-			
 		}
 		if (keyCS != null) {
 			keyCS.update(keyImage);
@@ -323,8 +303,7 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 		magentaCS.setValue((int)CMYK[1]*255);
 		yellowCS.setValue((int)CMYK[2]*255);
 		keyCS.setValue((int)CMYK[3]*255);
-	//	keyCS.setValue(250);
-		
+
 		computeCyanImage(cyan, magenta, yellow, key);
 		computeMagentaImage(cyan, magenta, yellow, key);
 		computeYellowImage(cyan, magenta, yellow, key);
@@ -345,7 +324,7 @@ class CMYKColorMediator extends Object implements SliderObserver, ObserverIF {
 	 * https://stackoverflow.com/questions/4982210/find-the-max-of-3-numbers-in-java-with-different-data-types
 	 */
 	public float[] rgbTocmyk(int r, int g,int b) {
-		float R = (float) r/255; // check for correct division
+		float R = (float) r/255;
 		float G = (float) g/255;
 		float B = (float) b/255;
 		
