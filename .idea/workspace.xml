@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="56826846-6ff7-4bce-8de7-ec1dad3b00d5" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/AbstractTransformer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/AnchoredTransformationCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/Caretaker.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/ColorChangeCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/ColorValueOutOfRange.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/Command.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/Coordinates.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/CreateDiscCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/CreateImageCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/CreateRectangleCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/Curves.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/Deletion.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/Dispatcher.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/FillColorsMediator$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/FillColorsMediator$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/FillColorsMediator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/FillTypeRadioButtonMediator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/Filter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/FilteringTransformer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/ImageClampStrategy.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/ImageConversionStrategy.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/ImageLineFiller.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/ImageStrategy.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/KernelFilterTransformer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/MeanFilter3x3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/MementoIF.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/MementoTracker.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/PaddingStrategy.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/PaddingZeroStrategy.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/RectangularRegionSelector.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/RotateCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/Rotation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/ScaleCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/Scaling.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/Selector.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/ShearXCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/ShearYCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/Shearing.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/SliderMediator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/ToggleButtonsMediator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/TransformerUnfound.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/TransformersIndex.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/TranslateCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/controller/Translation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/AnchoredTransModel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/BezierCurveType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/ColoredShape$ColoredShapeMemento.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/ColoredShape.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/ColoredShapeIF.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/ControlPoint$PointMemento.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/ControlPoint.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/Curve$CurveMemento.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/Curve.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/CurveType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/CurvesModel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/Disc$DiscMemento.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/Disc.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/DocObservable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/DocObserver.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/Document.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/ImageDouble.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/ImageX$ImageMemento.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/ImageX$ImageXExtensionsFilter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/ImageX.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/KernelModel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/Matrix.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/ObservableIF.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/ObserverIF.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/Pixel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/PixelDouble.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/PolylineCurveType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/Rectangle$RectangleMemento.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/Rectangle.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/Shape$ShapeMemento.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/Shape.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/ShapeContainer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/ShapeObservable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/ShapeObserver.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/model/ShearingTransformationModel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/Application$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/Application.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ButtonsPanel$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ButtonsPanel$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ButtonsPanel$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ButtonsPanel$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ButtonsPanel$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ButtonsPanel$6.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ButtonsPanel$7.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ButtonsPanel$8.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ButtonsPanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ColorDialogResult.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ColorParameter$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ColorParameter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ColorParameterPanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ColorSlider.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ColorSliderArrow.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ColorSliderArrowObserver.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ColorSliderImage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/CurvesPanel$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/CurvesPanel$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/CurvesPanel$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/CurvesPanel$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/CurvesPanel$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/CurvesPanel$6.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/CurvesPanel$7.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/CurvesPanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/FillTransformation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/FilterKernelPanel$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/FilterKernelPanel$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/FilterKernelPanel$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/FilterKernelPanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/KernelPanel$EditBox$KernelCellChange.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/KernelPanel$EditBox.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/KernelPanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/Menu$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/Menu$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/Menu$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/Menu$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/Menu$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/Menu.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/RGBColorMediator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/RotationTransformation$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/RotationTransformation$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/RotationTransformation$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/RotationTransformation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ScalingTransformation$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ScalingTransformation$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ScalingTransformation$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ScalingTransformation$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ScalingTransformation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ShearingTransformation$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ShearingTransformation$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ShearingTransformation$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ShearingTransformation$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ShearingTransformation$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/ShearingTransformation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/SliderObserver.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/TranslationTransformation$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/TranslationTransformation$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/TranslationTransformation$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/TranslationTransformation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab01/bin/view/Window.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/.classpath" afterPath="$PROJECT_DIR$/Lab02/.classpath" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/.idea/misc.xml" afterPath="$PROJECT_DIR$/Lab02/.idea/misc.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/.idea/modules.xml" afterPath="$PROJECT_DIR$/Lab02/.idea/modules.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Lab02/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/.project" afterPath="$PROJECT_DIR$/Lab02/.project" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/.settings/org.eclipse.jdt.core.prefs" afterPath="$PROJECT_DIR$/Lab02/.settings/org.eclipse.jdt.core.prefs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/Lab01.iml" afterPath="$PROJECT_DIR$/Lab02/Lab01.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/bin/.gitignore" afterPath="$PROJECT_DIR$/Lab02/bin/.gitignore" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/build.xml" afterPath="$PROJECT_DIR$/Lab02/build.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/license.txt" afterPath="$PROJECT_DIR$/Lab02/license.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/releasenotes.txt" afterPath="$PROJECT_DIR$/Lab02/releasenotes.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/AbstractTransformer.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/AbstractTransformer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/AnchoredTransformationCommand.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/AnchoredTransformationCommand.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/Caretaker.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/Caretaker.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/ColorChangeCommand.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/ColorChangeCommand.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/ColorValueOutOfRange.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/ColorValueOutOfRange.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/Command.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/Command.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/Coordinates.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/Coordinates.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/CreateDiscCommand.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/CreateDiscCommand.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/CreateImageCommand.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/CreateImageCommand.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/CreateRectangleCommand.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/CreateRectangleCommand.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/Curves.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/Curves.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/Deletion.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/Deletion.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/Dispatcher.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/Dispatcher.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/FillColorsMediator.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/FillColorsMediator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/FillTypeRadioButtonMediator.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/FillTypeRadioButtonMediator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/Filter.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/Filter.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/FilteringTransformer.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/FilteringTransformer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/ImageClampStrategy.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/ImageClampStrategy.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/ImageConversionStrategy.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/ImageConversionStrategy.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/ImageLineFiller.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/ImageLineFiller.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/ImageStrategy.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/ImageStrategy.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/KernelFilterTransformer.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/KernelFilterTransformer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/MeanFilter3x3.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/MeanFilter3x3.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/MementoIF.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/MementoIF.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/MementoTracker.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/MementoTracker.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/PaddingStrategy.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/PaddingStrategy.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/PaddingZeroStrategy.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/PaddingZeroStrategy.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/RectangularRegionSelector.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/RectangularRegionSelector.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/RotateCommand.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/RotateCommand.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/Rotation.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/Rotation.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/ScaleCommand.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/ScaleCommand.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/Scaling.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/Scaling.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/Selector.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/Selector.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/ShearXCommand.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/ShearXCommand.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/ShearYCommand.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/ShearYCommand.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/Shearing.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/Shearing.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/SliderMediator.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/SliderMediator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/ToggleButtonsMediator.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/ToggleButtonsMediator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/TransformerUnfound.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/TransformerUnfound.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/TransformersIndex.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/TransformersIndex.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/TranslateCommand.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/TranslateCommand.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/controller/Translation.java" afterPath="$PROJECT_DIR$/Lab02/src/controller/Translation.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/AnchoredTransModel.java" afterPath="$PROJECT_DIR$/Lab02/src/model/AnchoredTransModel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/BezierCurveType.java" afterPath="$PROJECT_DIR$/Lab02/src/model/BezierCurveType.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/ColoredShape.java" afterPath="$PROJECT_DIR$/Lab02/src/model/ColoredShape.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/ColoredShapeIF.java" afterPath="$PROJECT_DIR$/Lab02/src/model/ColoredShapeIF.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/ControlPoint.java" afterPath="$PROJECT_DIR$/Lab02/src/model/ControlPoint.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/Curve.java" afterPath="$PROJECT_DIR$/Lab02/src/model/Curve.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/CurveType.java" afterPath="$PROJECT_DIR$/Lab02/src/model/CurveType.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/CurvesModel.java" afterPath="$PROJECT_DIR$/Lab02/src/model/CurvesModel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/Disc.java" afterPath="$PROJECT_DIR$/Lab02/src/model/Disc.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/DocObservable.java" afterPath="$PROJECT_DIR$/Lab02/src/model/DocObservable.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/DocObserver.java" afterPath="$PROJECT_DIR$/Lab02/src/model/DocObserver.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/Document.java" afterPath="$PROJECT_DIR$/Lab02/src/model/Document.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/ImageDouble.java" afterPath="$PROJECT_DIR$/Lab02/src/model/ImageDouble.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/ImageX.java" afterPath="$PROJECT_DIR$/Lab02/src/model/ImageX.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/KernelModel.java" afterPath="$PROJECT_DIR$/Lab02/src/model/KernelModel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/Matrix.java" afterPath="$PROJECT_DIR$/Lab02/src/model/Matrix.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/ObservableIF.java" afterPath="$PROJECT_DIR$/Lab02/src/model/ObservableIF.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/ObserverIF.java" afterPath="$PROJECT_DIR$/Lab02/src/model/ObserverIF.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/Pixel.java" afterPath="$PROJECT_DIR$/Lab02/src/model/Pixel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/PixelDouble.java" afterPath="$PROJECT_DIR$/Lab02/src/model/PixelDouble.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/PolylineCurveType.java" afterPath="$PROJECT_DIR$/Lab02/src/model/PolylineCurveType.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/Rectangle.java" afterPath="$PROJECT_DIR$/Lab02/src/model/Rectangle.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/Shape.java" afterPath="$PROJECT_DIR$/Lab02/src/model/Shape.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/ShapeContainer.java" afterPath="$PROJECT_DIR$/Lab02/src/model/ShapeContainer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/ShapeObservable.java" afterPath="$PROJECT_DIR$/Lab02/src/model/ShapeObservable.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/ShapeObserver.java" afterPath="$PROJECT_DIR$/Lab02/src/model/ShapeObserver.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/model/ShearingTransformationModel.java" afterPath="$PROJECT_DIR$/Lab02/src/model/ShearingTransformationModel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/view/Application.java" afterPath="$PROJECT_DIR$/Lab02/src/view/Application.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/view/ButtonsPanel.java" afterPath="$PROJECT_DIR$/Lab02/src/view/ButtonsPanel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/view/CMYKColorMediator.java" afterPath="$PROJECT_DIR$/Lab02/src/view/CMYKColorMediator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/view/ColorDialog.java" afterPath="$PROJECT_DIR$/Lab02/src/view/ColorDialog.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/view/ColorDialogResult.java" afterPath="$PROJECT_DIR$/Lab02/src/view/ColorDialogResult.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/view/ColorParameter.java" afterPath="$PROJECT_DIR$/Lab02/src/view/ColorParameter.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/view/ColorParameterPanel.java" afterPath="$PROJECT_DIR$/Lab02/src/view/ColorParameterPanel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/view/ColorSlider.java" afterPath="$PROJECT_DIR$/Lab02/src/view/ColorSlider.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/view/CurvesPanel.java" afterPath="$PROJECT_DIR$/Lab02/src/view/CurvesPanel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/view/FillTransformation.java" afterPath="$PROJECT_DIR$/Lab02/src/view/FillTransformation.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/view/FilterKernelPanel.java" afterPath="$PROJECT_DIR$/Lab02/src/view/FilterKernelPanel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/view/HSVColorMediator.java" afterPath="$PROJECT_DIR$/Lab02/src/view/HSVColorMediator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/view/KernelPanel.java" afterPath="$PROJECT_DIR$/Lab02/src/view/KernelPanel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/view/Menu.java" afterPath="$PROJECT_DIR$/Lab02/src/view/Menu.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/view/RGBColorMediator.java" afterPath="$PROJECT_DIR$/Lab02/src/view/RGBColorMediator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/view/RotationTransformation.java" afterPath="$PROJECT_DIR$/Lab02/src/view/RotationTransformation.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/view/ScalingTransformation.java" afterPath="$PROJECT_DIR$/Lab02/src/view/ScalingTransformation.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/view/ShearingTransformation.java" afterPath="$PROJECT_DIR$/Lab02/src/view/ShearingTransformation.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/view/SliderObserver.java" afterPath="$PROJECT_DIR$/Lab02/src/view/SliderObserver.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/view/TranslationTransformation.java" afterPath="$PROJECT_DIR$/Lab02/src/view/TranslationTransformation.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/view/Window.java" afterPath="$PROJECT_DIR$/Lab02/src/view/Window.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Lab01/src/view/YCbCrColorMediator.java" afterPath="$PROJECT_DIR$/Lab02/src/view/YCbCrColorMediator.java" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Gti410_02" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gti410_02" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gti410_02" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gti410_02" type="462c0819:PsiDirectoryNode" />
+              <item name="Lab02" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gti410_02" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gti410_02" type="462c0819:PsiDirectoryNode" />
+              <item name="Lab02" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gti410_02" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gti410_02" type="462c0819:PsiDirectoryNode" />
+              <item name="Lab02" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gti410_02" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gti410_02" type="462c0819:PsiDirectoryNode" />
+              <item name="Lab02" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="56826846-6ff7-4bce-8de7-ec1dad3b00d5" name="Default" comment="" />
+      <created>1507312481498</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1507312481498</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
