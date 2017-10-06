@@ -45,17 +45,17 @@ class YCbCrColorMediator extends Object implements SliderObserver, ObserverIF {
         boolean updateCr = false;
         int[] arrayRGB;
         if (s == yCS && v != y) {
-            y = v;
+            y = ((v/(double)255)*219)+16;
             updateCb = true;
             updateCr = true;
         }
         if (s == cbCS && v != cb) {
-            cb = v;
+            cb = ((v/(double)255)*224)+16;
             updateY = true;
             updateCr = true;
         }
         if (s == crCS && v != cr) {
-            cr = v;
+            cr = ((v/(double)255)*224)+16;
             updateY = true;
             updateCb= true;
         }
@@ -231,8 +231,8 @@ class YCbCrColorMediator extends Object implements SliderObserver, ObserverIF {
         computeCrImage(y,cb,cr);
 
 
-        System.out.println("Y: " + y + " Cb: " + cb + "Cr: " + cr);
-        System.out.println("R: " + arrayRGB[0] + " G: " + arrayRGB[1] + " B: " + arrayRGB[2]);
+        //System.out.println("Y: " + y + " Cb: " + cb + "Cr: " + cr);
+        //System.out.println("R: " + arrayRGB[0] + " G: " + arrayRGB[1] + " B: " + arrayRGB[2]);
         // Efficiency issue: When the color is adjusted on a tab in the
         // user interface, the sliders color of the other tabs are recomputed,
         // even though they are invisible. For an increased efficiency, the
