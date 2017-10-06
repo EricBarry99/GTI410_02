@@ -22,10 +22,11 @@ import java.awt.event.KeyEvent;
  * <p>Title: TransformersIndex</p>
  * <p>Description: Class that contains and returns the appropriate transformer when requested by an AbstractTransformer class instance or a child instance.</p>
  * <p>Copyright: Copyright (c) 2003 Mohammed Elghaouat, Eric Paquette</p>
- * <p>Company: (ÉTS) - École de Technologie Supérieure</p>
+ * <p>Company: (ï¿½TS) - ï¿½cole de Technologie Supï¿½rieure</p>
  * @author unascribed
  * @version $Revision: 1.19 $
  */
+@SuppressWarnings("LossyEncoding")
 public class TransformersIndex extends AbstractTransformer {
 	private Selector theSelector;
 	private RectangularRegionSelector theRectangularSelector;
