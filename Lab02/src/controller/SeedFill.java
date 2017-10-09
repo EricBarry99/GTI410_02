@@ -1,17 +1,44 @@
 package controller;
 
-/*
-  @TODO: Créer la classe seedFill pour remplacer la classeimageLineFiller dans la classe TransformersIndex
-    Ajouter une nouvelle classe qui exécute le remplissage.
-    Cette nouvelle classe remplace la classe ImageLineFiller dans la classe TransformersIndex.
-    Voir l'attribut theFiller et le constructeur de la classe controller/TransformersIndex.
-    Voir aussi les méthodes mouseClicked et horizontalLineFill.
-  */
+import model.Pixel;
 
 public class SeedFill {
 
-/*
-Refaire notre propre mouseClicked et implémenter les fonctions de remplissage
-remplacer imageLineFiller dans la classe TransformerIndex pour la notre.
- */
+    public void floodFill(int coorX, int coorY, Pixel currentPixel, Pixel fillColor) {
+        /*
+        FloodFill(x, y, interiorColor, newColor)
+        if (getPixel(x,y) == interiorColor)
+            setpixel(x,y,newColor)
+        FloodFill(x+1,y,interiorColor, newColor)
+        FloodFill(x-1,y,interiorColor, newColor)
+        FloodFill(x,y+1,interiorColor, newColor)
+        FloodFill(x,y-1,interiorColor, newColor)
+        */
+
+        if (currentPixel.getARGB() == fillColor.getARGB()) {
+            currentPixel.setColor(fillColor);
+        }
+        floodFill(coorX + 1, coorY, interiorColor, fillColor);
+        floodFill(coorX - 1, coorY, interiorColor, fillColor);
+        floodFill(coorX, coorY + 1, interiorColor, fillColor);
+        floodFill(coorX, coorY - 1, interiorColor, fillColor);
+
+    }
+
+
+    public void boundaryFill() {
+
+        // depuis les notes de cours
+        /*
+        BoundaryFill(x, y, boundaryColor, newColor)
+        if (getPixel(x,y) <> boundaryColor &&
+                getPixel(x,y) <> newColor)
+        setpixel(x,y,newColor)
+        BoundaryFill(x+1,y, boundaryColor, newColor)
+        BoundaryFill(x-1,y, boundaryColor, newColor)
+        BoundaryFill(x,y+1, boundaryColor, newColor)
+        BoundaryFill(x,y-1, boundaryColor, newColor)
+    */
+    }
+
 }

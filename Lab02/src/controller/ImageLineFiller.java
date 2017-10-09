@@ -21,6 +21,7 @@ import java.awt.event.*;
 import java.awt.geom.NoninvertibleTransformException;
 import java.util.List;
 import java.util.Stack;
+import controller.SeedFill;
 
 /**
  * <p>Title: ImageLineFiller</p>
@@ -38,7 +39,8 @@ public class ImageLineFiller extends AbstractTransformer {
 	private int hueThreshold = 1;
 	private int saturationThreshold = 2;
 	private int valueThreshold = 3;
-	
+	public SeedFill seedFiller;
+
 	/**
 	 * Creates an ImageLineFiller with default parameters.
 	 * Default pixel change color is black.
@@ -70,7 +72,23 @@ public class ImageLineFiller extends AbstractTransformer {
 				if (0 <= ptTransformed.x && ptTransformed.x < currentImage.getImageWidth() &&
 				    0 <= ptTransformed.y && ptTransformed.y < currentImage.getImageHeight()) {
 					currentImage.beginPixelUpdate();
-					horizontalLineFill(ptTransformed);
+
+                    //horizontalLineFill(ptTransformed);
+                    // check for fill type and call the right methods
+
+                    // actual pixel being pointed on :
+                    if(isFloodFill()) {
+                        // floodfill
+                        Pixel currentPixel = currentImage.getPixel(ptTransformed.x, ptTransformed.y);
+
+
+                        seedFiller.floodFill(ptTransformed.x,ptTransformed.y, currentPixel, fillColor);
+
+                    }
+                    else{
+                        // boundary fill
+
+                    }
 					currentImage.endPixelUpdate();
 					return true;
 				}
@@ -85,6 +103,9 @@ public class ImageLineFiller extends AbstractTransformer {
 	private void horizontalLineFill(Point ptClicked) {
 		Stack<Point> stack = new Stack<Point>();
 		stack.push(ptClicked);
+
+        System.out.println("IMAGELINEFILLER _ HORIZ FILL");
+
 		while (!stack.empty()) {
 			Point current = (Point)stack.pop();
 			if (0 <= current.x && current.x < currentImage.getImageWidth() &&
@@ -98,6 +119,7 @@ public class ImageLineFiller extends AbstractTransformer {
 				stack.push(nextRight);
 			}
 		}
+
 		// TODO EP In this method, we are creating many new Point instances. 
 		//      We could try to reuse as many as possible to be more efficient.
 		// TODO EP In this method, we could be creating many Point instances. 
@@ -150,6 +172,7 @@ public class ImageLineFiller extends AbstractTransformer {
 		floodFill = b;
 		if (floodFill) {
 			System.out.println("now doing Flood Fill");
+			System.out.println("TEST");
 		} else {
 			System.out.println("now doing Boundary Fill");
 		}
