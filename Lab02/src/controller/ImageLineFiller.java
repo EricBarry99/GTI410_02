@@ -80,11 +80,12 @@ public class ImageLineFiller extends AbstractTransformer {
                     seedFiller = new SeedFill(currentImage);
 
                     if(isFloodFill()) {
-                        seedFiller.floodFill(pt.x,pt.y, clickedPixel, fillColor);
+                       seedFiller.floodFill(pt.x,pt.y, clickedPixel, fillColor);
+                      //  seedFiller.floodFillerw(pt, clickedPixel, fillColor);
                     }
                     else{
                         seedFiller.boundaryFill(pt.x,pt.y, borderColor, fillColor);
-                        // boundary fill
+                     //   seedFiller.boundaryFillw(pt, borderColor, fillColor);
                     }
                     currentImage.endPixelUpdate();
                     return true;
