@@ -1,44 +1,46 @@
 package controller;
 
+import model.ImageX;
 import model.Pixel;
+
+import java.awt.*;
+import java.util.Stack;
 
 public class SeedFill {
 
-    public void floodFill(int coorX, int coorY, Pixel currentPixel, Pixel fillColor) {
-        /*
-        FloodFill(x, y, interiorColor, newColor)
-        if (getPixel(x,y) == interiorColor)
-            setpixel(x,y,newColor)
-        FloodFill(x+1,y,interiorColor, newColor)
-        FloodFill(x-1,y,interiorColor, newColor)
-        FloodFill(x,y+1,interiorColor, newColor)
-        FloodFill(x,y-1,interiorColor, newColor)
-        */
+    public ImageX image;
 
-        if (currentPixel.getARGB() == fillColor.getARGB()) {
-            currentPixel.setColor(fillColor);
+    public SeedFill(ImageX imageEntree){
+        this.image = imageEntree;
+    }
+
+
+    public void floodFill(int coorX, int coorY, Pixel clickedPixel, Pixel newColor) {
+
+        if (image.getPixel(coorX,coorY).getARGB() == clickedPixel.getARGB()) {
+
+            image.setPixel(coorX, coorY, newColor);
+
+            floodFill(coorX + 1, coorY, clickedPixel, newColor);
+            floodFill(coorX - 1, coorY, clickedPixel, newColor);
+            floodFill(coorX, coorY + 1, clickedPixel, newColor);
+            floodFill(coorX, coorY - 1, clickedPixel, newColor);
         }
-        floodFill(coorX + 1, coorY, interiorColor, fillColor);
-        floodFill(coorX - 1, coorY, interiorColor, fillColor);
-        floodFill(coorX, coorY + 1, interiorColor, fillColor);
-        floodFill(coorX, coorY - 1, interiorColor, fillColor);
-
     }
 
 
-    public void boundaryFill() {
+    public void boundaryFill(int coorX, int coorY, Pixel boundaryColor, Pixel newColor) {
 
-        // depuis les notes de cours
-        /*
-        BoundaryFill(x, y, boundaryColor, newColor)
-        if (getPixel(x,y) <> boundaryColor &&
-                getPixel(x,y) <> newColor)
-        setpixel(x,y,newColor)
-        BoundaryFill(x+1,y, boundaryColor, newColor)
-        BoundaryFill(x-1,y, boundaryColor, newColor)
-        BoundaryFill(x,y+1, boundaryColor, newColor)
-        BoundaryFill(x,y-1, boundaryColor, newColor)
-    */
+        int currentPixelColor = image.getPixel(coorX, coorY).getARGB();
+
+        if((currentPixelColor != boundaryColor.getARGB()) && ( currentPixelColor != newColor.getARGB())){
+            image.setPixel(coorX, coorY, newColor);
+
+            boundaryFill(coorX+1,coorY, boundaryColor, newColor);
+            boundaryFill(coorX-1,coorY, boundaryColor, newColor);
+            boundaryFill(coorX,coorY+1, boundaryColor, newColor);
+            boundaryFill(coorX,coorY-1, boundaryColor, newColor);
+        }
+
     }
-
 }

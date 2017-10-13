@@ -32,7 +32,7 @@ import controller.SeedFill;
  * @version $Revision: 1.13 $
  */
 public class ImageLineFiller extends AbstractTransformer {
-	private ImageX currentImage;
+	private  ImageX currentImage;
 	private Pixel fillColor = new Pixel(0xFF00FFFF);
 	private Pixel borderColor = new Pixel(0xFFFFFF00);
 	private boolean floodFill = true;
@@ -51,51 +51,49 @@ public class ImageLineFiller extends AbstractTransformer {
 	/* (non-Javadoc)
 	 * @see controller.AbstractTransformer#getID()
 	 */
-	public int getID() { return ID_FLOODER; } 
-	
-	protected boolean mouseClicked(MouseEvent e){
-		List intersectedObjects = Selector.getDocumentObjectsAtLocation(e.getPoint());
-		if (!intersectedObjects.isEmpty()) {
-			Shape shape = (Shape)intersectedObjects.get(0);
-			if (shape instanceof ImageX) {
-				currentImage = (ImageX)shape;
+	public int getID() { return ID_FLOODER; }
 
-				Point pt = e.getPoint();
-				Point ptTransformed = new Point();
-				try {
-					shape.inverseTransformPoint(pt, ptTransformed);
-				} catch (NoninvertibleTransformException e1) {
-					e1.printStackTrace();
-					return false;
-				}
-				ptTransformed.translate(-currentImage.getPosition().x, -currentImage.getPosition().y);
-				if (0 <= ptTransformed.x && ptTransformed.x < currentImage.getImageWidth() &&
-				    0 <= ptTransformed.y && ptTransformed.y < currentImage.getImageHeight()) {
-					currentImage.beginPixelUpdate();
 
-                    //horizontalLineFill(ptTransformed);
-                    // check for fill type and call the right methods
+    protected boolean mouseClicked(MouseEvent e){
+        List intersectedObjects = Selector.getDocumentObjectsAtLocation(e.getPoint());
+        if (!intersectedObjects.isEmpty()) {
+            Shape shape = (Shape)intersectedObjects.get(0);
+            if (shape instanceof ImageX) {
+                currentImage = (ImageX)shape;
 
-                    // actual pixel being pointed on :
+                Point pt = e.getPoint();
+                Point ptTransformed = new Point();
+                try {
+                    shape.inverseTransformPoint(pt, ptTransformed);
+                } catch (NoninvertibleTransformException e1) {
+                    e1.printStackTrace();
+                    return false;
+                }
+                ptTransformed.translate(-currentImage.getPosition().x, -currentImage.getPosition().y);
+                if (0 <= ptTransformed.x && ptTransformed.x < currentImage.getImageWidth() &&
+                        0 <= ptTransformed.y && ptTransformed.y < currentImage.getImageHeight()) {
+                    currentImage.beginPixelUpdate();
+
+                    Pixel clickedPixel = currentImage.getPixel(e.getX(), e.getY());
+                    System.out.println(clickedPixel.getARGB());
+
+                    seedFiller = new SeedFill(currentImage);
+
                     if(isFloodFill()) {
-                        // floodfill
-                        Pixel currentPixel = currentImage.getPixel(ptTransformed.x, ptTransformed.y);
-
-
-                        seedFiller.floodFill(ptTransformed.x,ptTransformed.y, currentPixel, fillColor);
-
+                        seedFiller.floodFill(pt.x,pt.y, clickedPixel, fillColor);
                     }
                     else{
+                        seedFiller.boundaryFill(pt.x,pt.y, borderColor, fillColor);
                         // boundary fill
-
                     }
-					currentImage.endPixelUpdate();
-					return true;
-				}
-			}
-		}
-		return false;
-	}
+                    currentImage.endPixelUpdate();
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 
 	/**
 	 * Horizontal line fill with specified color
@@ -172,7 +170,6 @@ public class ImageLineFiller extends AbstractTransformer {
 		floodFill = b;
 		if (floodFill) {
 			System.out.println("now doing Flood Fill");
-			System.out.println("TEST");
 		} else {
 			System.out.println("now doing Boundary Fill");
 		}
@@ -223,3 +220,49 @@ public class ImageLineFiller extends AbstractTransformer {
 		System.out.println("new Value Threshold " + i);
 	}
 }
+
+
+/*
+
+	protected boolean mouseClicked(MouseEvent e){
+		List intersectedObjects = Selector.getDocumentObjectsAtLocation(e.getPoint());
+		if (!intersectedObjects.isEmpty()) {
+			Shape shape = (Shape)intersectedObjects.get(0);
+			if (shape instanceof ImageX) {
+				currentImage = (ImageX)shape;
+
+				Point pt = e.getPoint();
+				Point ptTransformed = new Point();
+				try {
+					shape.inverseTransformPoint(pt, ptTransformed);
+				} catch (NoninvertibleTransformException e1) {
+					e1.printStackTrace();
+					return false;
+				}
+				ptTransformed.translate(-currentImage.getPosition().x, -currentImage.getPosition().y);
+				if (0 <= ptTransformed.x && ptTransformed.x < currentImage.getImageWidth() &&
+				    0 <= ptTransformed.y && ptTransformed.y < currentImage.getImageHeight()) {
+					currentImage.beginPixelUpdate();
+
+                    //horizontalLineFill(ptTransformed);
+                    // check for fill type and call the right methods
+
+                    if(isFloodFill()) {
+                        // floodfill
+//                        Pixel currentPixel = currentImage.getPixel(ptTransformed.x, ptTransformed.y);
+						System.out.println("Calling Flood Fill");
+
+						seedFiller.floodFill(ptTransformed.x,ptTransformed.y, fillColor, currentImage);
+                    }
+                    else{
+                        // boundary fill
+
+                    }
+					currentImage.endPixelUpdate();
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+ */
